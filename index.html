@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Factory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .left-menu {
+            margin-left: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .box, .image-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #4CAF50;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        form label,
+        form input,
+        form button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        form button {
+            width: auto;
+            align-self: center;
+        }
+
+        .centered-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .form-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="left-menu">Books Factory</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showHome()">Home</a></li>
+                <li><a href="#" onclick="showLogin()">Login</a></li>
+                <li><a href="#" onclick="showSignUp()">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        <!-- Home Page Content -->
+        <section id="home" class="active">
+            <div class="box-container">
+                <div class="box">
+                    <h2>Welcome</h2>
+                    <p>Discover a world of stories, knowledge, and imagination. Dive into our vast collection of books across various genres.</p>
+                </div>
+                <div class="box">
+                    <h2>Services Provided</h2>
+                    <p>At Books Factory, enjoy personalized book recommendations, a vast collection of titles, and engaging book clubs. Take advantage of exclusive member benefits, reading challenges, and author events. Plus, explore our curated book lists and convenient delivery services.</p>
+                </div>
+                <div class="box">
+                    <h2>Books Factory</h2>
+                    <p>Reading books enhances your knowledge, improves focus, and boosts mental stimulation. It reduces stress, improves vocabulary, and strengthens cognitive functions. Dive into new worlds and perspectives, fostering empathy and creativity.</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="C:\Users\ADMIN\Desktop\varshini clg\varshini.html\web development internship 1\images\image1.jpeg" alt="image1">
+                </div>
+                <div class="image-box">
+                    <img src="C:\Users\ADMIN\Desktop\varshini clg\varshini.html\web development internship 1\images\image2.jpeg" alt="image2">
+                </div>
+                <div class="image-box">
+                    <img src="C:\Users\ADMIN\Desktop\varshini clg\varshini.html\web development internship 1\images\image3.jpeg" alt="image3">
+                </div>
+            </div>
+        </section>
+        <!-- Login Page Content -->
+        <section id="login">
+            <div class="centered-form">
+                <div class="form-container">
+                    <h2>Login</h2>
+                    <form id="login-form" onsubmit="login(event)">
+                        <label for="login-username">Username:</label>
+                        <input type="text" id="login-username" required>
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Sign Up Page Content -->
+        <section id="signup">
+            <div class="centered-form">
+                <div class="form-container">
+                    <h2>Sign Up</h2>
+                    <form id="signup-form" onsubmit="signUp(event)">
+                        <label for="signup-username">Username:</label>
+                        <input type="text" id="signup-username" required>
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>About Us: At Books Factory, we're passionate about fostering a love for reading. Our mission is to connect readers with books that inspire, educate, and entertain. Join our community of book enthusiasts and explore endless literary adventures.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            showHome();
+            document.querySelector("#login form").addEventListener("submit", login);
+            document.querySelector("#signup form").addEventListener("submit", signUp);
+        });
+
+        function showHome() {
+            setActiveSection("home");
+        }
+
+        function showLogin() {
+            setActiveSection("login");
+        }
+
+        function showSignUp() {
+            setActiveSection("signup");
+        }
+
+        function setActiveSection(sectionId) {
+            const sections = document.querySelectorAll("main section");
+            sections.forEach(section => {
+                section.classList.remove("active");
+                if (section.id === sectionId) {
+                    section.classList.add("active");
+                }
+            });
+        }
+
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById("login-username").value;
+            const password = document.getElementById("login-password").value;
+            // For demonstration, simply alert the username and password
+            alert(Login successful!\nUsername: ${username}\nPassword: ${password});
+            // Add your login logic here
+            showHome(); // Optionally redirect to the home page after login
+        }
+
+        function signUp(event) {
+            event.preventDefault();
+            const username = document.getElementById("signup-username").value;
+            const password = document.getElementById("signup-password").value;
+            // For demonstration, simply alert the username and password
+            alert(Sign Up successful!\nUsername: ${username}\nPassword: ${password});
+            // Add your sign-up logic here
+            showLogin(); // Redirect to login page after successful sign-up
+        }
+    </script>
+</body>
+</html>
